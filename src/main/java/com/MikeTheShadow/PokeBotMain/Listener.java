@@ -33,7 +33,7 @@ public class Listener extends ListenerAdapter
             }
             if(msg.getMessage().getEmbeds().get(0).getTitle().toLowerCase().contains("congratulations"))System.out.println("found gratz message");
             */
-            if(msg.getMessage().getEmbeds().get(0).getTitle().toLowerCase().contains("congratulations") && input.contains(username))
+            if(Objects.requireNonNull(msg.getMessage().getEmbeds().get(0).getTitle()).toLowerCase().contains("congratulations") && input.contains(username))
             {
                 if(Objects.requireNonNull(msg.getMessage().getEmbeds().get(0).getDescription()).contains("100!"))
                 {
@@ -80,8 +80,6 @@ public class Listener extends ListenerAdapter
                     e.printStackTrace();
 
                 }
-
-
             }
             catch (IOException e)
             {
@@ -98,6 +96,7 @@ public class Listener extends ListenerAdapter
             Main.Output("Setting channel to: " + Main.CHANNEL.getName());
             OnConnect newThread = new OnConnect("MessageThread",Main.CHANNEL);
             newThread.start();
+            Main.CHANNEL.sendMessage("p!info").complete();
         }
     }
 

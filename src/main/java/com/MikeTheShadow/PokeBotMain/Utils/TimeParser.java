@@ -56,7 +56,7 @@ public class TimeParser implements Runnable
             }
             try
             {
-                Thread.sleep(3000000);
+                Thread.sleep(60000);
             } catch (InterruptedException e)
             {
                 e.printStackTrace();

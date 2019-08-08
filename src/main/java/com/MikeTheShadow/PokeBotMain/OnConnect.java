@@ -13,7 +13,7 @@ public class OnConnect implements Runnable
     private  Thread thread;
     private String threadName;
     private TextChannel channel;
-
+    public static int userDelay = 0;
     OnConnect(String name, TextChannel chan)
     {
         this.channel = chan;
@@ -21,7 +21,6 @@ public class OnConnect implements Runnable
     }
     public void run()
     {
-
         while(true)
         {
             if(Main.canRun)
@@ -30,9 +29,10 @@ public class OnConnect implements Runnable
                 {
                     if(!Main.stopped)
                     {
+                        if(Main.CHARACTER.length() < 1) Main.CHARACTER = ".";
                         channel.sendMessage(Main.CHARACTER).complete();
                         Random ran = new Random();
-                        Thread.sleep(700 + ran.nextInt(500));
+                        Thread.sleep(700 + ran.nextInt(500) + userDelay);
                     }
                     else
                     {
@@ -45,6 +45,7 @@ public class OnConnect implements Runnable
                 }
             }
         }
+
     }
     void start()
     {
@@ -54,8 +55,5 @@ public class OnConnect implements Runnable
             thread.start();
         }
     }
-
-
-
-
 }
+

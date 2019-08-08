@@ -1,10 +1,13 @@
 package com.MikeTheShadow.PokeBotMain;
 
-import java.awt.*;
-
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.IOException;
 
 public class MainPokeBotWindow
@@ -26,12 +29,12 @@ public class MainPokeBotWindow
     private JFrame frmPokecordmain;
     public static JLabel loadImagelabel;
     //for timer
-    public static JSpinner timeout;
     static List output;
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         EventQueue.invokeLater(() ->
         {
             try {
@@ -268,6 +271,26 @@ public class MainPokeBotWindow
         lblPm.setFont(new Font("Tahoma", Font.PLAIN, 20));
         lblPm.setBounds(10, 357, 63, 23);
         Time.add(lblPm);
+        int x =0;
+        String y = String.valueOf(x);
+
+        //Create slider for changing catch delay
+
+        JLabel updateLabel = new JLabel("Second(s): 0");
+        updateLabel.setBounds(391, 240, 200, 14);
+        SettingsTab.add(updateLabel);
+
+        JSlider slider = new JSlider();
+        slider.setValue(0);
+        slider.setMaximum(10);
+        slider.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent arg0) {
+                updateLabel.setText("Second(s): " + slider.getValue());
+                OnConnect.userDelay = slider.getValue() * 1000;
+            }
+        });
+        slider.setBounds(181, 236, 200, 26);
+        SettingsTab.add(slider);
         //Load setup
         try
         {
