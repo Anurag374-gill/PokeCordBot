@@ -62,6 +62,7 @@ public class Listener extends ListenerAdapter
         {
             return;
         }
+        assert msg.getMessage().getEmbeds().get(0).getDescription() != null;
         if(msg.getMessage().getEmbeds().get(0).getDescription().contains("Guess the pokémon and type"))
         {
             try
