@@ -11,7 +11,8 @@ A simple bot to play pokecord
 
 ### Download
 
-[V1.3.1](http://bit.ly/2NTjoAW)
+Unstable Latest version [V1.3.2](http://bit.ly/2YMQRBf)
+Stable Build [V1.3.1](http://bit.ly/2NTjoAW)
 
 
 ###### Changelog
