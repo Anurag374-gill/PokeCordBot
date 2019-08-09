@@ -17,7 +17,7 @@ Stable Build [V1.3.1](http://bit.ly/2NTjoAW)
 
 
 ###### Changelog
-1. Fixed a bug with the system not leveling pokemon (lol the mistake was pretty stupid tbh)
+1. Added a slider which is a delay between when spam messages are sent (its by realistic catch)
 
 ###### Upcoming features
 
