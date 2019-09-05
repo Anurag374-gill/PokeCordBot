@@ -206,8 +206,8 @@ public class MainPokeBotWindow
         lblSpamChar.setBounds(6, 65, 90, 14);
         SettingsTab.add(lblSpamChar);
 
-        JLabel Spamchardesclabel = new JLabel("This is what will be spammed over and over again");
-        Spamchardesclabel.setBounds(181, 63, 347, 14);
+        JLabel Spamchardesclabel = new JLabel("Delay on the spam        ");
+        Spamchardesclabel.setBounds(181, 40, 347, 14);
         SettingsTab.add(Spamchardesclabel);
 
         JLabel lblNotRecommendedEspecially = new JLabel("Not recommended especially if you're in public discords with this account");
@@ -289,7 +289,7 @@ public class MainPokeBotWindow
                 OnConnect.userDelay = slider.getValue() * 1000;
             }
         });
-        slider.setBounds(181, 236, 200, 26);
+        slider.setBounds(181, 65, 200, 26);
         SettingsTab.add(slider);
         //Load setup
         try

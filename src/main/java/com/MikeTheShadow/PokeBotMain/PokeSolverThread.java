@@ -53,13 +53,27 @@ public class PokeSolverThread implements Runnable
                 {
                     sendCatchMessage(pokemonName);
                 }
-                else if(Main.catchOutsideChannel && channel != Main.CHANNEL && Main.whitelist.contains(pokemonName))
+                else if(Main.catchOutsideChannel && channel.getGuild().getId().equals(Main.CHANNEL.getGuild().getId()))
                 {
-                    sendCatchMessage(pokemonName);
+                    if(!Main.catchOnlyWhiteListed)
+                    {
+                        sendCatchMessage(pokemonName);
+                    }
+                    if(Main.catchOnlyWhiteListed && Main.whitelist.contains(pokemonName))
+                    {
+                        sendCatchMessage(pokemonName);
+                    }
                 }
                 else if(Main.catchEverythingEverywhere)
                 {
-                    sendCatchMessage(pokemonName);
+                    if(!Main.catchOnlyWhiteListed)
+                    {
+                        sendCatchMessage(pokemonName);
+                    }
+                    if(Main.catchOnlyWhiteListed && Main.whitelist.contains(pokemonName))
+                    {
+                        sendCatchMessage(pokemonName);
+                    }
                 }
                 MainPokeBotWindow.output.select(MainPokeBotWindow.output.getRows() - 1);
             }

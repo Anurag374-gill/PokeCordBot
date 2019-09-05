@@ -23,16 +23,6 @@ public class Listener extends ListenerAdapter
         {
             String username = Main.api.getSelfUser().getName().toLowerCase();
             String input =  Objects.requireNonNull(msg.getMessage().getEmbeds().get(0).getTitle()).toLowerCase();
-            /*Use this if it breaks again
-            if(Objects.requireNonNull(msg.getMessage().getEmbeds().get(0).getTitle()).contains("Congratulations"))
-            {
-                if(username.contains(input)) System.out.println("Username contains input");
-                if(input.contains(username)) System.out.println("Input contains Username");
-                System.out.println(username + ":" + username.length());
-                System.out.println(username + ":" + input.length());
-            }
-            if(msg.getMessage().getEmbeds().get(0).getTitle().toLowerCase().contains("congratulations"))System.out.println("found gratz message");
-            */
             if(Objects.requireNonNull(msg.getMessage().getEmbeds().get(0).getTitle()).toLowerCase().contains("congratulations") && input.contains(username))
             {
                 if(Objects.requireNonNull(msg.getMessage().getEmbeds().get(0).getDescription()).contains("100!"))

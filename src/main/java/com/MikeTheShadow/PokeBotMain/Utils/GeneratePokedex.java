@@ -2,7 +2,6 @@ package com.MikeTheShadow.PokeBotMain.Utils;
 
 import com.MikeTheShadow.PokeBotMain.Main;
 import com.MikeTheShadow.PokeBotMain.MainPokeBotWindow;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
