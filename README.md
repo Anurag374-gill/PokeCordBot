@@ -11,13 +11,16 @@ A simple bot to play pokecord
 
 ### Download
 
-Unstable Latest version [V1.3.2](http://bit.ly/2YMQRBf)
+Unstable lastest build[V1.3.3](http://bit.ly/2lZmh5Q)
 
-Stable Build [V1.3.1](http://bit.ly/2NTjoAW)
+Stable version [V1.3.2](http://bit.ly/2YMQRBf)
+
 
 
 ###### Changelog
-1. Added a slider which is a delay between when spam messages are sent (its by realistic catch)
+1. Moved slider to correct position
+2. Catch outside channel now catches pokemon in all channels in the same server that the channel ID is from
+3. Catch everything everywhere now adheres to the rule of catching whitelisted pokemon but still catches in every discord the bot is in
 
 ###### Upcoming features
 
