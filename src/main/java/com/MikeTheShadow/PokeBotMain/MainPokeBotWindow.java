@@ -277,7 +277,7 @@ public class MainPokeBotWindow
         //Create slider for changing catch delay
 
         JLabel updateLabel = new JLabel("Second(s): 0");
-        updateLabel.setBounds(391, 240, 200, 14);
+        updateLabel.setBounds(391, 65, 200, 14);
         SettingsTab.add(updateLabel);
 
         JSlider slider = new JSlider();
