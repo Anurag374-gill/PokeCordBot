@@ -11,16 +11,16 @@ A simple bot to play pokecord
 
 ### Download
 
-Unstable lastest build[V1.3.3](http://bit.ly/2lZmh5Q)
+Latest version[V1.3.4](http://bit.ly/2m8FBh3)
 
-Stable version [V1.3.2](http://bit.ly/2YMQRBf)
+old build[V1.3.3](http://bit.ly/2lZmh5Q)
+
 
 
 
 ###### Changelog
-1. Moved slider to correct position
-2. Catch outside channel now catches pokemon in all channels in the same server that the channel ID is from
-3. Catch everything everywhere now adheres to the rule of catching whitelisted pokemon but still catches in every discord the bot is in
+1. Fixed position of delay number
+2. Fixed lists bug with capitals
 
 ###### Upcoming features
-
+Feel free to add tickets for ideas in the issues section
