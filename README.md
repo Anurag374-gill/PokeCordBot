@@ -2,7 +2,7 @@
 A simple bot to play pokecord
 
 ##### Setup
-0. Link for people who want an explanation of things -> https://www.youtube.com/watch?v=lo7YCg3UQ-4&feature=youtu.be
+0. Link for people who want an explanation of things -> [here](https://www.youtube.com/watch?v=lo7YCg3UQ-4&feature=youtu.be)
 1. Download the rar and extract it
 2. Run the jar and fill out the settings tab
 3. To get your Token go [here](https://discordhelp.net/discord-token)
@@ -11,9 +11,9 @@ A simple bot to play pokecord
 
 ### Download
 
-Latest version[V1.3.4](http://bit.ly/2m8FBh3)
+Latest version [V1.3.4](http://bit.ly/2m8FBh3)
 
-old build[V1.3.3](http://bit.ly/2lZmh5Q)
+old build [V1.3.3](http://bit.ly/2lZmh5Q)
 
 
 
