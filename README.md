@@ -11,7 +11,7 @@ A simple bot to play pokecord
 
 ### Download
 
-Latest version [V1.4.0](http://bit.ly/2kDkH9n)
+Latest version [V1.4.1](http://bit.ly/2lQScVK)
 
 old build [V1.3.4](http://bit.ly/2m8FBh3)
 
@@ -21,5 +21,6 @@ old build [V1.3.4](http://bit.ly/2m8FBh3)
 ###### Changelog
 1. Added split ability for spam. Use , to split spam messages ie: s,h,w,y,u you can split words/numbers etc
 2. Added slave option for token. Split tokens via , example: masterToken,slave1Token,slave2Token,slave3Token etc (first token is the main token all others will only spam messages)
+3.Minor bugfixes
 ###### Upcoming features
 Feel free to add tickets for ideas in the issues section
