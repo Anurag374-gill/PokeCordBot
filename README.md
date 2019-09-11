@@ -11,16 +11,15 @@ A simple bot to play pokecord
 
 ### Download
 
-Latest version [V1.3.4](http://bit.ly/2m8FBh3)
+Latest version [V1.4.0](http://bit.ly/2kDkH9n)
 
-old build [V1.3.3](http://bit.ly/2lZmh5Q)
+old build [V1.3.4](http://bit.ly/2m8FBh3)
 
 
 
 
 ###### Changelog
-1. Fixed position of delay number
-2. Fixed lists bug with capitals
-
+1. Added split ability for spam. Use , to split spam messages ie: s,h,w,y,u you can split words/numbers etc
+2. Added slave option for token. Split tokens via , example: masterToken,slave1Token,slave2Token,slave3Token etc (first token is the main token all others will only spam messages)
 ###### Upcoming features
 Feel free to add tickets for ideas in the issues section
