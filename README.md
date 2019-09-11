@@ -2,7 +2,7 @@
 A simple bot to play pokecord
 
 ![](	https://img.shields.io/github/issues/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/forks/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/stars/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/license/MikeTheShadow/PokeCordBot)
-![](https://img.shields.io/badge/Latest-V1.4.1-RED?style=plastic&logo=java&?link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest&link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest&style=for-the-badge&logo=appveyor)
+![](https://img.shields.io/badge/Latest-V1.4.1-RED?style=plastic&logo=java&?link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest&link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
 ##### Setup
 
 > 1. Link for people who want an explanation of things -> [here](https://www.youtube.com/watch?v=lo7YCg3UQ-4&feature=youtu.be)
