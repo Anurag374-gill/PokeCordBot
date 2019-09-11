@@ -26,6 +26,7 @@ public class GeneratePokedex implements Runnable
             Main.Output("Dex created!");
         }
         Main.pokemonData = loadPokedex();
+
         MainPokeBotWindow.loadImagelabel.setText("Complete!");
         Main.StartMainThread();
     }

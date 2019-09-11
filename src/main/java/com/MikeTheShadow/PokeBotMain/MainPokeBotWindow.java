@@ -140,7 +140,16 @@ public class MainPokeBotWindow
                 Main.api.removeEventListener(new Listener());
                 Main.stopped = true;
                 Main.api.shutdownNow();
-                output.add("Shutting down...");
+                output.add("Shutting down main thread...");
+                if(Main.slaveList.size() > 0)
+                {
+                    for(int i = 0;i < Main.slaveList.size();i++)
+                    {
+                        Main.slaveList.get(i).removeEventListener(new SlaveListener());
+                        Main.slaveList.get(i).shutdownNow();
+                        output.add("Shutting down slave...");
+                    }
+                }
                 StartButton.setEnabled(true);
             }
         });

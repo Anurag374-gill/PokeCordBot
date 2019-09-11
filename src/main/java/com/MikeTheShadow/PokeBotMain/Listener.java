@@ -81,13 +81,28 @@ public class Listener extends ListenerAdapter
     @Override
     public void onReady(ReadyEvent event)
     {
-        Main.CHANNEL = Main.api.getTextChannelById(Main.channelID);
-        if(Main.channelID != null && Main.sendMessages)
+        while(true)
         {
-            Main.Output("Setting channel to: " + Main.CHANNEL.getName());
-            OnConnect newThread = new OnConnect("MessageThread",Main.CHANNEL);
-            newThread.start();
-            Main.CHANNEL.sendMessage("p!info").complete();
+            try
+            {
+                Thread.sleep(500);
+                Main.CHANNEL = Main.api.getTextChannelById(Main.channelID);
+                if(Main.channelID != null && Main.sendMessages)
+                {
+                    Main.Output("Setting Main channel to: " + Main.CHANNEL.getName());
+                    OnConnect newThread = new OnConnect("MessageThread",Main.CHANNEL);
+                    newThread.start();
+                    Main.CHANNEL.sendMessage("p!info").complete();
+                    Main.StartSlaves();
+                    return;
+                }
+            }
+            catch (Exception e)
+            {
+
+                System.out.println("ONLOAD ERROR!");
+            }
+
         }
     }
 

@@ -15,13 +15,17 @@ import java.util.*;
 
 public class Main
 {
-    static JDA api;
+    public static JDA api;
+    //slave stuff
+    public static List<JDA> slaveList = new ArrayList<>();
+    public static int slaveNum = 0;
     static List<String> whitelist = new ArrayList<>();
-    static TextChannel CHANNEL = null;
+    public static TextChannel CHANNEL = null;
     private static String TOKEN = null;
+    private static String[] TOKENLIST = null;
     static String CHARACTER = ".";
     static String PREFIX = "p!";
-    static String channelID = null;
+    public static String channelID = null;
     static boolean sendMessages = true;
     static boolean catchOnlyWhiteListed = false;
     static boolean catchOutsideChannel = false;
@@ -67,6 +71,32 @@ public class Main
         }
 
     }
+    public static void StartSlaves()
+    {
+        if(TOKENLIST == null) return;
+        System.out.println("SLAVEDEBUG: " + (TOKENLIST.length - 1) + " slave(s) found!");
+        try
+        {
+            System.out.println("If sending a screenshot of this please hide your tokens for security!");
+                for (String token :TOKENLIST)
+                {
+                    System.out.println("DEBUGTOKEN: " + token);
+                    if(token != TOKENLIST[0])
+                    {
+                        Output("Starting a slave instance");
+                        JDA slave = new JDABuilder(AccountType.CLIENT).setToken(token).build();
+                        slave.addEventListener(new SlaveListener());
+                        slaveList.add(slave);
+                    }
+                }
+        }
+        catch (Exception e)
+        {
+            System.out.println("SLAVE EXCEPTION!");
+            e.printStackTrace();
+        }
+
+    }
     public static void Output(String output)
     {
         Calendar cal = Calendar.getInstance();
@@ -92,6 +122,11 @@ public class Main
             CHARACTER = properties.getProperty("CHARACTER");
             channelID = properties.getProperty("CHANNELID");
             TOKEN = properties.getProperty("TOKEN");
+            if(TOKEN.contains(","))
+            {
+                TOKENLIST = TOKEN.split(",");
+                TOKEN = TOKENLIST[0];
+            }
             sendMessages = Boolean.parseBoolean(properties.getProperty("SENDMESSAGES").toLowerCase());
             catchOnlyWhiteListed = Boolean.parseBoolean(properties.getProperty("WHITELIST").toLowerCase());
             catchOutsideChannel = Boolean.parseBoolean(properties.getProperty("CATCHOUTSIDE").toLowerCase());
