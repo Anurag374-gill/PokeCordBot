@@ -17,13 +17,13 @@ public class SlaveListener extends ListenerAdapter
             Main.Output("Waiting to start slave...");
             try
             {
-                Thread.sleep(5000);
+                Thread.sleep(3000);
             } catch (InterruptedException e)
             {
                 e.printStackTrace();
             }
-            TextChannel channel = Main.slaveList.get(Main.slaveNum).getTextChannelById(Main.channelID);
             Main.slaveNum++;
+            TextChannel channel = Main.slaveList.get(Main.slaveNum).getTextChannelById(Main.channelID);
             Main.Output("Setting a slave channel to: " + channel.getName());
             OnConnect newThread = new OnConnect("MessageThread",channel);
             newThread.start();

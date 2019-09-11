@@ -18,12 +18,13 @@ public class Main
     public static JDA api;
     //slave stuff
     public static List<JDA> slaveList = new ArrayList<>();
-    public static int slaveNum = 0;
+    public static int slaveNum = -1;
     static List<String> whitelist = new ArrayList<>();
     public static TextChannel CHANNEL = null;
     private static String TOKEN = null;
     private static String[] TOKENLIST = null;
-    static String CHARACTER = ".";
+    static String CHARACTER = null;
+    static String[] CHARACTERLIST = null;
     static String PREFIX = "p!";
     public static String channelID = null;
     static boolean sendMessages = true;
@@ -119,7 +120,7 @@ public class Main
         {
             Main.Output("Loading properties file...");
             PREFIX = properties.getProperty("PREFIX");
-            CHARACTER = properties.getProperty("CHARACTER");
+            CHARACTERLIST = properties.getProperty("CHARACTER").split(",");
             channelID = properties.getProperty("CHANNELID");
             TOKEN = properties.getProperty("TOKEN");
             if(TOKEN.contains(","))
@@ -189,13 +190,32 @@ public class Main
     }
     static void SaveProperties()
     {
+        String tokenString = "";
+        //get the token in a string
+        if(TOKENLIST != null)
+        {
+            for(String token: TOKENLIST)
+            {
+                if(!token.equals(TOKEN))
+                {
+                    tokenString += "," + token;
+                }
+                else
+                {
+                    tokenString += token;
+                }
+            }
+        }
+        else
+        {
+            tokenString = MainPokeBotWindow.tokenBox.getText();
+        }
         catchOnlyWhiteListed = MainPokeBotWindow.catchOnlyWhitelisted.isSelected();
         catchOutsideChannel = MainPokeBotWindow.CatchOutsideChannel.isSelected();
         catchEverythingEverywhere = MainPokeBotWindow.CatchEverything.isSelected();
         realisticCatch = MainPokeBotWindow.realisticCatch.isSelected();
         showOnlyWhiteListed = MainPokeBotWindow.ShowOnlyWhitelisted.isSelected();
         sendMessages = MainPokeBotWindow.sendMessages.isSelected();
-        TOKEN = MainPokeBotWindow.tokenBox.getText();
         channelID = MainPokeBotWindow.channelBox.getText();
         CHARACTER = MainPokeBotWindow.SpamBox.getText();
         PREFIX = MainPokeBotWindow.prefixBox.getText();
@@ -203,7 +223,7 @@ public class Main
         TimeString = MainPokeBotWindow.TimeField.getText();
         Properties properties = new Properties();
         properties.setProperty("CHANNELID", channelID);
-        properties.setProperty("TOKEN",TOKEN);
+        properties.setProperty("TOKEN",tokenString);
         properties.setProperty("WHITELIST",String.valueOf(catchOnlyWhiteListed));
         properties.setProperty("CATCHOUTSIDE",String.valueOf(catchOutsideChannel));
         properties.setProperty("CATCHEVERYTHING",String.valueOf(catchEverythingEverywhere));

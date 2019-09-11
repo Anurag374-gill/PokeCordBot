@@ -30,7 +30,16 @@ public class OnConnect implements Runnable
                     if(!Main.stopped)
                     {
                         if(Main.CHARACTER.length() < 1) Main.CHARACTER = ".";
-                        channel.sendMessage(Main.CHARACTER).complete();
+                        if(Main.CHARACTERLIST != null)
+                        {
+                            Random ran = new Random();
+                            int random = ran.nextInt(Main.CHARACTERLIST.length - 1);
+                            channel.sendMessage(Main.CHARACTERLIST[random]).complete();
+                        }
+                        else
+                        {
+                            channel.sendMessage(Main.CHARACTER).complete();
+                        }
                         Random ran = new Random();
                         Thread.sleep(700 + ran.nextInt(500) + userDelay);
                     }
