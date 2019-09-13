@@ -92,7 +92,7 @@ public class Listener extends ListenerAdapter
                     Main.Output("Setting Main channel to: " + Main.CHANNEL.getName());
                     OnConnect newThread = new OnConnect("MessageThread",Main.CHANNEL);
                     newThread.start();
-                    Main.CHANNEL.sendMessage("p!info").complete();
+                    Main.CHANNEL.sendMessage(Main.PREFIX + "info").complete();
                     Main.StartSlaves();
                     return;
                 }

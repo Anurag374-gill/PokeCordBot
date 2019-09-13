@@ -1,11 +1,7 @@
 package com.MikeTheShadow.PokeBotMain;
-
-import net.dv8tion.jda.api.entities.Invite;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
-import javax.xml.soap.Text;
 
 public class SlaveListener extends ListenerAdapter
 {
