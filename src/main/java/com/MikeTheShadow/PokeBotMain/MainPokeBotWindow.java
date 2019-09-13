@@ -6,8 +6,6 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.io.IOException;
 
 public class MainPokeBotWindow
@@ -25,6 +23,10 @@ public class MainPokeBotWindow
     static JTextField channelBox,tokenBox,prefixBox;
     static JTextArea pokemonLevelList;
     static JTextField TimeField;
+
+    //for the slider
+    static JSlider slider;
+
     public static JProgressBar pokemonLoadingBar;
     private JFrame frmPokecordmain;
     public static JLabel loadImagelabel;
@@ -289,8 +291,8 @@ public class MainPokeBotWindow
         updateLabel.setBounds(391, 65, 200, 14);
         SettingsTab.add(updateLabel);
 
-        JSlider slider = new JSlider();
-        slider.setValue(0);
+        slider = new JSlider();
+        slider.setValue(OnConnect.userDelay);
         slider.setMaximum(10);
         slider.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent arg0) {

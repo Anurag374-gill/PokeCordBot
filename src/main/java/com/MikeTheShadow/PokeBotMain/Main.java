@@ -34,9 +34,9 @@ public class Main
     static boolean realisticCatch = true;
     static boolean showOnlyWhiteListed = false;
     //list of pokemon to level
-    static List<String> levelList = new ArrayList<>();
+    static String[] levelList;
     //version checking
-    public static final String VERSION = "1.4.1";
+    public static final String VERSION = "1.4.2";
     //New pokemon data much lighter and way more efficient
     public static List<PokemonData> pokemonData = new ArrayList<>();
     //use this to change the image spacing size
@@ -98,6 +98,31 @@ public class Main
         }
 
     }
+    public static String checkForNextPokemon()
+    {
+        String stringToReturn = "-1";
+        for(int i = 0;i < levelList.length;i++)
+        {
+            if(!levelList[i].equals("-1"))
+            {
+                stringToReturn = levelList[i];
+                levelList[i] = "-1";
+                System.out.println("Sending pokemon: " + stringToReturn);
+                break;
+            }
+        }
+        String setString = "";
+        for(int i = 0;i < levelList.length;i++)
+        {
+            if(!levelList[i].equals("-1"))
+            {
+                setString += levelList[i] + "\n";
+            }
+        }
+        System.out.println("Setstring = " + setString);
+        if(setString.length() > 1) MainPokeBotWindow.pokemonLevelList.setText(setString.substring(0,setString.length()-1));
+        return stringToReturn;
+    }
     public static void Output(String output)
     {
         Calendar cal = Calendar.getInstance();
@@ -125,6 +150,7 @@ public class Main
             TOKEN = properties.getProperty("TOKEN");
             if(TOKEN.contains(","))
             {
+                MainPokeBotWindow.tokenBox.setText(TOKEN);
                 TOKENLIST = TOKEN.split(",");
                 TOKEN = TOKENLIST[0];
             }
@@ -135,14 +161,16 @@ public class Main
             realisticCatch = Boolean.parseBoolean(properties.getProperty("REALISTICCATCH").toLowerCase());
             showOnlyWhiteListed = Boolean.parseBoolean(properties.getProperty("SHOWONLYWHITELIST").toLowerCase());
             TimeString = properties.getProperty("TIME");
+            OnConnect.userDelay = Integer.parseInt(properties.getProperty("DELAY"));
+            MainPokeBotWindow.slider.setValue(Integer.parseInt(properties.getProperty("DELAY")));
             try
             {
-                levelList = Arrays.asList(properties.getProperty("LEVELLIST").split(" "));
+                levelList = properties.getProperty("LEVELLIST").split(" ");
             }
             catch (Exception e)
             {
-                levelList = null;
-                System.out.println("levelList empty ignoring...");
+                System.out.println("levelList empty ignore below error if your list is empty");
+                //e.printStackTrace();
             }
             if(properties.getProperty("CHARACTER") != null)CHARACTER = properties.getProperty("CHARACTER");
             if(TOKEN == null || TOKEN.length() < 5)return true;
@@ -166,11 +194,12 @@ public class Main
         catch (Exception e)
         {
             e.printStackTrace();
-            Main.Output("Please fill out settings tab");
+            Main.Output("Error in settings file resetting...");
             CreateProperties();
         }
         return false;
     }
+
     static void CreateProperties() throws IOException
     {
         Properties properties = new Properties();
@@ -186,6 +215,7 @@ public class Main
         properties.setProperty("PREFIX","p!");
         properties.setProperty("LEVELLIST","");
         properties.setProperty("TIME","");
+        properties.setProperty("DELAY","0");
         properties.store(new FileOutputStream("pokebot.properties"),null);
     }
     static void SaveProperties()
@@ -196,14 +226,8 @@ public class Main
         {
             for(String token: TOKENLIST)
             {
-                if(!token.equals(TOKEN))
-                {
-                    tokenString += "," + token;
-                }
-                else
-                {
-                    tokenString += token;
-                }
+                if(!token.equals(TOKEN)) tokenString += "," + token;
+                else tokenString += token;
             }
         }
         else
@@ -219,7 +243,7 @@ public class Main
         channelID = MainPokeBotWindow.channelBox.getText();
         CHARACTER = MainPokeBotWindow.SpamBox.getText();
         PREFIX = MainPokeBotWindow.prefixBox.getText();
-        levelList = Arrays.asList(MainPokeBotWindow.pokemonLevelList.getText().split("\n"));
+        levelList = MainPokeBotWindow.pokemonLevelList.getText().split("\n");
         TimeString = MainPokeBotWindow.TimeField.getText();
         Properties properties = new Properties();
         properties.setProperty("CHANNELID", channelID);
@@ -233,12 +257,13 @@ public class Main
         properties.setProperty("CHARACTER",CHARACTER);
         properties.setProperty("PREFIX",PREFIX);
         properties.setProperty("TIME",TimeString);
-        if(levelList.size() > 0)
+        properties.setProperty("DELAY",String.valueOf(OnConnect.userDelay));
+        if(levelList.length > 0)
         {
             String levelString = "";
             for (String pokeName : levelList)
             {
-                if(pokeName.length() > 0)
+                if(pokeName.length() > 0 && !pokeName.equals("-1"))
                 {
                     levelString += pokeName + " ";
                 }
@@ -246,12 +271,15 @@ public class Main
             }
             try
             {
-                levelString = levelString.substring(0, levelString.length() - 1);
-                properties.setProperty("LEVELLIST", levelString);
+                if(levelString.length() > 1)
+                {
+                    levelString = levelString.substring(0, levelString.length() - 1);
+                    properties.setProperty("LEVELLIST", levelString);
+                }
             }
             catch (Exception e)
             {
-
+                e.printStackTrace();
             }
         }
         try

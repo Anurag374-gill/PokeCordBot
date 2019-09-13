@@ -11,7 +11,6 @@ import java.util.Objects;
 
 public class Listener extends ListenerAdapter
 {
-    //public static int storageInt = 0;
     @Override
     public void onMessageReceived(MessageReceivedEvent msg)
     {
@@ -27,22 +26,11 @@ public class Listener extends ListenerAdapter
             {
                 if(Objects.requireNonNull(msg.getMessage().getEmbeds().get(0).getDescription()).contains("100!"))
                 {
-                    assert  Main.levelList.size() > 0;
-                    msg.getChannel().sendMessage(Main.PREFIX + "select " + Main.levelList.get(0)).complete();
-                    Main.levelList.remove(0);
-                    if(Main.levelList.size() > 0)
-                    {
-                        System.out.println("Resetting list");
-                        MainPokeBotWindow.pokemonLevelList.setText("");
-                        for (String pokemon:Main.levelList)
-                        {
-                            MainPokeBotWindow.pokemonLevelList.append(pokemon + "\n");
-                        }
-                    }
-                    else
-                    {
-                        MainPokeBotWindow.pokemonLevelList.setText("");
-                    }
+                    if(Main.levelList == null) return;
+                    String checkNextPokemon = Main.checkForNextPokemon();
+                    if(!checkNextPokemon.equals("-1")) return;
+                    if(Main.checkForNextPokemon().equals("-1"))
+                    msg.getChannel().sendMessage(Main.PREFIX + "select " + checkNextPokemon).complete();
                     Main.SaveProperties();
                 }
                 return;
@@ -67,7 +55,7 @@ public class Listener extends ListenerAdapter
                 }
                 catch (Exception e)
                 {
-                    System.out.println("THIS IS A HTTP.AGENT ERROR! Please report it in the not catching pokemon thread thansk!");
+                    System.out.println("THIS IS A HTTP.AGENT ERROR! Please report it as such thanks!");
                     e.printStackTrace();
 
                 }
@@ -92,7 +80,20 @@ public class Listener extends ListenerAdapter
                     Main.Output("Setting Main channel to: " + Main.CHANNEL.getName());
                     OnConnect newThread = new OnConnect("MessageThread",Main.CHANNEL);
                     newThread.start();
-                    Main.CHANNEL.sendMessage(Main.PREFIX + "info").complete();
+                    try
+                    {
+                        if(Main.levelList != null)
+                        {
+                            String checkNextPokemon = Main.checkForNextPokemon();
+                            if(!checkNextPokemon.equals("-1")) Main.CHANNEL.sendMessage(Main.PREFIX + "select " + checkNextPokemon).complete();
+                        }
+
+                    }
+                    catch (Exception e)
+                    {
+                        System.out.println("Minor levellist error you can ignore this.");
+                        e.printStackTrace();
+                    }
                     Main.StartSlaves();
                     return;
                 }
