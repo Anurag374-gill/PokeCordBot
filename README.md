@@ -2,7 +2,7 @@
 A simple bot to play pokecord
 
 ![](	https://img.shields.io/github/issues/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/forks/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/stars/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/license/MikeTheShadow/PokeCordBot)
-![](https://img.shields.io/badge/Latest-V1.4.1-RED?style=plastic&logo=java&?link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest&link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
+![](https://img.shields.io/badge/Latest-V1.4.2-RED?style=plastic&logo=java&?link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest&link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
 
 Like what I do? Buy me a coffee lol
 
@@ -17,7 +17,7 @@ Like what I do? Buy me a coffee lol
 
 ### Download
 
-Latest version [V1.4.1](https://github.com/MikeTheShadow/PokeCordBot/releases/tag/V1.4.1)
+Latest version [V1.4.2](https://github.com/MikeTheShadow/PokeCordBot/releases/tag/V1.4.1)
 > note you can now download the current/latest release directly from this site via the latest button at the top
 
 old build [V1.3.4](http://bit.ly/2m8FBh3)
@@ -27,9 +27,7 @@ old build [V1.3.4](http://bit.ly/2m8FBh3)
 
 ###### Changelog
 ```
-1. Added split ability for spam. Use , to split spam messages ie: s,h,w,y,u you can split words/numbers etc
-2. Added slave option for token. Split tokens via , example: masterToken,slave1Token,slave2Token,slave3Token etc (first token is the main token all others will only spam messages)
-3.Minor bugfixes
+moved to the release section for better formatting
 ```
 ###### Upcoming features
 ```
