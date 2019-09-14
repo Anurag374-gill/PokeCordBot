@@ -22,7 +22,9 @@ Latest version [V1.4.2](https://github.com/MikeTheShadow/PokeCordBot/releases/la
 
 old build [V1.3.4](http://bit.ly/2m8FBh3)
 
-
+Though idk how safe making a server for it is. Here is my discord info
+[Discord](https://discord.gg/GqyNx2t) or DM me directly PokeDev#7362
+join at your own risk DMing is probably safer.
 
 
 ###### Changelog
