@@ -9,7 +9,6 @@ import java.net.URL;
 
 public class VersionChecker
 {
-    static String version;
     public static boolean CheckVersion()
     {
         int code;

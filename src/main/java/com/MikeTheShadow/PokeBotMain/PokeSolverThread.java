@@ -36,6 +36,7 @@ public class PokeSolverThread implements Runnable
             {
                 ImageReader imageReader = new ImageReader(imageToRead,Main.pokemonData);
                 String pokemonName = imageReader.start().toLowerCase();
+                System.out.println("DEBUG pokemonFound: " + pokemonName);
                 //For realistic catching
                 if(Main.realisticCatch)Thread.sleep(3000 + new Random().nextInt(1000));
                 //logic for user settings
