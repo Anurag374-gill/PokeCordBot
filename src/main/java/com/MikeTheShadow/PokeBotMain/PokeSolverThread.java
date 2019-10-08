@@ -27,7 +27,6 @@ public class PokeSolverThread implements Runnable
     }
     public void run()
     {
-        System.out.println("DEBUG: Pokemon found all parsing is below this!");
         try
         {
             //Index all the pokemon into an array
@@ -83,7 +82,7 @@ public class PokeSolverThread implements Runnable
         //Basically if a pokemon can't be found
         catch (Exception e)
         {
-            writeToFile();
+                writeToFile();
         }
     }
     private void writeToFile()
