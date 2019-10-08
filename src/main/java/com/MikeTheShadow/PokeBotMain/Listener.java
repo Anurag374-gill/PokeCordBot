@@ -38,11 +38,12 @@ public class Listener extends ListenerAdapter
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             return;
         }
-        assert msg.getMessage().getEmbeds().get(0).getDescription() != null;
-        if(msg.getMessage().getEmbeds().get(0).getDescription().contains("Guess the pokémon and type"))
+        if(msg.getMessage().getEmbeds().get(0).getDescription().contains("nd type p!c"))
         {
+            System.out.println(msg.getMessage().getEmbeds().get(0));
             try
             {
                 MessageEmbed embed = msg.getMessage().getEmbeds().get(0);
@@ -73,7 +74,8 @@ public class Listener extends ListenerAdapter
         {
             try
             {
-                Thread.sleep(500);
+                System.out.println(Main.api.getSelfUser().getName());
+                Thread.sleep(1000);
                 Main.CHANNEL = Main.api.getTextChannelById(Main.channelID);
                 if(Main.channelID != null && Main.sendMessages)
                 {
@@ -100,8 +102,7 @@ public class Listener extends ListenerAdapter
             }
             catch (Exception e)
             {
-
-                System.out.println("ONLOAD ERROR!");
+                System.out.println("ONLOAD ERROR! Check to make sure your bot acc can see the correct channel");
             }
 
         }
