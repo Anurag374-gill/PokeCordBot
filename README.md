@@ -17,10 +17,8 @@ Like what I do? Buy me a coffee lol
 
 ### Download
 
-Latest version [V1.4.2](https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
-> note you can now download the current/latest release directly from this site via the latest button at the top
-
-old build [V1.3.4](http://bit.ly/2m8FBh3)
+Latest version [V1.4.3](https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
+> It's just a jar so you'll have to download the pokemon from the main github page
 
 Though idk how safe making a server for it is. Here is my discord info
 [Discord](https://discord.gg/GqyNx2t) or DM me directly PokeDev#7362
