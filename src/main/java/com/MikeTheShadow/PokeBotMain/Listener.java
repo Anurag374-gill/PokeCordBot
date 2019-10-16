@@ -74,13 +74,16 @@ public class Listener extends ListenerAdapter
             {
                 Thread.sleep(500);
                 Main.CHANNEL = Main.api.getTextChannelById(Main.channelID);
-                if(Main.channelID != null && Main.sendMessages)
+                if(Main.channelID != null)
                 {
-                    Main.Output("Setting Main channel to: " + Main.CHANNEL.getName());
-                    OnConnect newThread = new OnConnect("MessageThread",Main.CHANNEL);
-                    newThread.start();
                     try
                     {
+                        if(Main.sendMessages)
+                        {
+                            Main.Output("Setting Main channel to: " + Main.CHANNEL.getName());
+                            OnConnect newThread = new OnConnect("MessageThread",Main.CHANNEL);
+                            newThread.start();
+                        }
                         if(Main.levelList != null)
                         {
                             String checkNextPokemon = Main.checkForNextPokemon();

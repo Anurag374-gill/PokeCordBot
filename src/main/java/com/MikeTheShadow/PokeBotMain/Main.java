@@ -36,7 +36,7 @@ public class Main
     //list of pokemon to level
     static String[] levelList;
     //version checking
-    public static final String VERSION = "1.4.2";
+    public static final String VERSION = "1.4.4";
     //New pokemon data much lighter and way more efficient
     public static List<PokemonData> pokemonData = new ArrayList<>();
     //use this to change the image spacing size
