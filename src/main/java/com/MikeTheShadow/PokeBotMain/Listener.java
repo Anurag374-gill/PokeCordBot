@@ -38,9 +38,10 @@ public class Listener extends ListenerAdapter
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             return;
         }
-        if(msg.getMessage().getEmbeds().get(0).getDescription().contains("nd type p!c"))
+        if(msg.getMessage().getEmbeds().get(0).getDescription().toLowerCase().contains("guess"))
         {
             try
             {
