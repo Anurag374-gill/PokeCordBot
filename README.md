@@ -2,7 +2,7 @@
 A simple bot to play pokecord
 
 ![](	https://img.shields.io/github/issues/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/forks/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/stars/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/license/MikeTheShadow/PokeCordBot)
-![](https://img.shields.io/badge/Latest-V1.4.2-RED?style=plastic&logo=java&?link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest&link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
+![](https://img.shields.io/badge/Latest-V1.5.0-RED?style=plastic&logo=java&?link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest&link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
 
 Like what I do? Buy me a coffee lol
 
@@ -17,7 +17,7 @@ Like what I do? Buy me a coffee lol
 
 ### Download
 
-Latest version [V1.4.4](https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
+Latest version [V1.5.0](https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
 > It's just a jar so you'll have to download the pokemon from the main github page
 
 Though idk how safe making a server for it is. Here is my discord info
