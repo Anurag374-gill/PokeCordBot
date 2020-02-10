@@ -1,6 +1,6 @@
 # PokeCordBot
 A simple bot to play pokecord
-
+###  SINCE DISCORD HAS BEEN SLOWLY DESTROYING SELF BOTS I AM CREATING A COUNTERMEASURE HERE [here](https://github.com/MikeTheShadow/DisCatcher)
 ![](	https://img.shields.io/github/issues/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/forks/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/stars/MikeTheShadow/PokeCordBot) ![](https://img.shields.io/github/license/MikeTheShadow/PokeCordBot)
 ![](https://img.shields.io/badge/Latest-V1.5.0-RED?style=plastic&logo=java&?link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest&link=https://github.com/MikeTheShadow/PokeCordBot/releases/latest)
 
